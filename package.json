@@ -1,0 +1,41 @@
+{
+  "name": "ff-link-resolver-desktop",
+  "version": "1.0.0",
+  "description": "Sequential FuckingFast direct-link resolver for Windows",
+  "main": "main.js",
+  "author": "Local",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check main.js && node --check chrome-resolver.js && node --check preload.js && node --check renderer.js",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "43.4.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.ffresolver.desktop",
+    "productName": "FF Resolver",
+    "artifactName": "FF-Resolver-${version}-Portable.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "chrome-resolver.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "build/icon.ico"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "FF-Resolver-${version}-Portable.${ext}"
+    }
+  }
+}

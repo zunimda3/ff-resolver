@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #eef2f7;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 720px; background: #eef2f7; }
+button, textarea { font: inherit; }
+button {
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background: #fff;
+  color: #263248;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { background: #f6f8fb; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, textarea:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+.primary { background: #16845c; border-color: #16845c; color: #fff; font-weight: 600; }
+.primary:hover:not(:disabled) { background: #11724e; }
+.app-shell { padding: 22px; min-height: 100vh; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 17px; }
+h1 { margin: 0; font-size: 24px; font-weight: 650; }
+.topbar p { margin: 4px 0 0; color: #6b778c; }
+.queue-controls, .result-actions, .tabs { display: flex; align-items: center; gap: 7px; }
+.workspace { display: grid; grid-template-columns: minmax(260px, .78fr) minmax(440px, 1.5fr); gap: 15px; flex: 1; min-height: 0; }
+.right-column { display: grid; grid-template-rows: minmax(210px, .85fr) minmax(230px, 1fr); gap: 15px; min-height: 0; }
+.panel { background: #fff; border: 1px solid #d9e0ea; border-radius: 12px; overflow: hidden; min-height: 0; }
+.panel-heading, .results-heading { min-height: 52px; padding: 11px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #e0e6ee; }
+.panel-heading h2 { margin: 0; font-size: 14px; font-weight: 650; }
+.panel-heading span, footer { color: #6d788b; font-size: 12px; }
+.input-panel { display: flex; flex-direction: column; }
+.input-content { padding: 14px; display: flex; flex-direction: column; flex: 1; }
+.input-content label { font-size: 12px; color: #596579; margin-bottom: 6px; }
+textarea { width: 100%; flex: 1; min-height: 270px; resize: none; border: 1px solid #d8dfe9; border-radius: 9px; background: #f8fafc; color: #172033; padding: 11px; font: 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.input-content .primary { margin-top: 11px; align-self: flex-end; }
+.list-body { overflow: auto; height: calc(100% - 52px); }
+.list-row, .output-row, .failure-row { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid #e5e9f0; }
+.order { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: #f3f6fa; color: #718096; font-size: 11px; }
+.order.active { color: #2563eb; background: #eaf1ff; }
+.row-main { min-width: 0; }
+.row-main strong, .row-main span { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.row-main strong { font-size: 12px; font-weight: 650; }
+.row-main span { margin-top: 3px; color: #7a8699; font: 11px/1.35 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.state { color: #7a8699; font-size: 11px; max-width: 145px; text-align: right; }
+.state.working { color: #2563eb; }
+.success { color: #16845c; font-weight: 700; }
+.failed { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; color: #b42318; background: #fff0ef; font-weight: 700; }
+.icon-button { border: 0; padding: 5px 7px; color: #566377; }
+.tabs button { border-color: transparent; background: transparent; color: #69758a; }
+.tabs button[aria-selected="true"] { border-color: #d8dfe9; background: #f5f7fa; color: #172033; }
+.results-heading { flex-wrap: wrap; }
+.result-actions button { padding: 6px 9px; font-size: 12px; }
+.empty { color: #8994a6; display: grid; place-items: center; min-height: 110px; font-size: 12px; }
+footer { margin-top: 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+footer strong { color: #354158; font-weight: 600; }
+[hidden] { display: none !important; }

@@ -1,0 +1,9 @@
+node_modules/
+release/
+
+.chrome-diagnostic-profile/
+.resolver-verification-profile/
+
+*.log
+.DS_Store
+Thumbs.db

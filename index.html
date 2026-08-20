@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FF Resolver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>FF Resolver</h1>
+        <p>Resolve direct links locally, one at a time.</p>
+      </div>
+      <div class="queue-controls">
+        <button id="skip" type="button">Skip current</button>
+        <button id="clear-queue" type="button">Clear queue</button>
+        <button id="pause" type="button">Pause queue</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="panel input-panel">
+        <div class="panel-heading"><h2>Input links</h2><span>One URL per line</span></div>
+        <div class="input-content">
+          <label for="links">FuckingFast links</label>
+          <textarea id="links" spellcheck="false" placeholder="https://fuckingfast.co/xxxx#archive.rar"></textarea>
+          <button id="add" type="button" class="primary">Add to queue</button>
+        </div>
+      </aside>
+
+      <div class="right-column">
+        <section class="panel queue-panel">
+          <div class="panel-heading"><h2>Queue</h2><span id="status">Ready</span></div>
+          <div id="queue-body" class="list-body"><div class="empty">The queue is empty.</div></div>
+        </section>
+
+        <section class="panel results-panel">
+          <div class="results-heading">
+            <div class="tabs" role="tablist" aria-label="Results">
+              <button type="button" data-tab="outputs" role="tab" aria-selected="true">Output</button>
+              <button type="button" data-tab="failures" role="tab" aria-selected="false">Failures</button>
+            </div>
+            <div class="result-actions">
+              <button id="retry" type="button">Retry failures</button>
+              <button id="copy" type="button">Copy all</button>
+              <button id="export" type="button">Export</button>
+              <button id="clear" type="button">Clear</button>
+            </div>
+          </div>
+          <div id="output-body" data-panel="outputs" class="list-body"><div class="empty">Resolved direct URLs will appear here.</div></div>
+          <div id="failure-body" data-panel="failures" class="list-body" hidden><div class="empty">No failed links.</div></div>
+        </section>
+      </div>
+    </section>
+
+    <footer><span>Dedicated resolver profile · Files are never downloaded</span><strong id="summary">0 resolved · 0 failed · 0 waiting</strong></footer>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
