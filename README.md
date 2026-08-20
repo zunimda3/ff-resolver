@@ -1,4 +1,4 @@
-# FF Resolver
+# FuckingFast Links Downloader (FF Resolver)
 
 FF Resolver is a portable Windows application that converts
 `fuckingfast.co` page links into their direct `dl.fuckingfast.co` URLs. It
